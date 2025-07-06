@@ -201,7 +201,7 @@ async def update():
     
     print("Running update script...")
     await asyncio.sleep(3)
-    subprocess.run("update")
+    await subprocess.run("update")
     print("Finished running update script.")
 
 def main():
