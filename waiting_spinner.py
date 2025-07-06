@@ -76,8 +76,7 @@ class QtWaitingSpinner(QWidget):
 
     def paintEvent(self, event):
         self.updatePosition()
-        painter = QPainter()
-        painter.begin(self)
+        painter = QPainter(self)
         painter.fillRect(self.rect(), Qt.transparent)
         painter.setRenderHint(QPainter.Antialiasing, True)
         if self.mCurrentCounter > self.mNumberOfLines:
