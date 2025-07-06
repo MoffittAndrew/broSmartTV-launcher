@@ -11,19 +11,19 @@ HEIGHT = 1080
 APP = QApplication([])
 
 # Initialize window
-MAIN_WINDOW = QWidget()
-MAIN_WINDOW.setWindowTitle("Launching...")
-MAIN_WINDOW.setFixedSize(QSize(WIDTH, HEIGHT))
+LAUNCH_FRAME = QWidget()
+LAUNCH_FRAME.setWindowTitle("Launching...")
+LAUNCH_FRAME.setFixedSize(QSize(WIDTH, HEIGHT))
 
 # Set background color
-MAIN_WINDOW.setAutoFillBackground(True)
-p = MAIN_WINDOW.palette()
-p.setColor(MAIN_WINDOW.backgroundRole(), Qt.black)
-MAIN_WINDOW.setPalette(p)
+LAUNCH_FRAME.setAutoFillBackground(True)
+p = LAUNCH_FRAME.palette()
+p.setColor(LAUNCH_FRAME.backgroundRole(), Qt.black)
+LAUNCH_FRAME.setPalette(p)
 
 # Hide mouse pointer
-MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
-MAIN_WINDOW.unsetCursor()
+LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
+LAUNCH_FRAME.unsetCursor()
 
 async def update():
     
@@ -37,10 +37,10 @@ async def update():
 def main():
     with qtinter.using_asyncio_from_qt():
         waiting_circ = QtWaitingSpinner()
-        waiting_circ.setParent(MAIN_WINDOW)
-        MAIN_WINDOW.show()
-        MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
-        MAIN_WINDOW.unsetCursor()
+        waiting_circ.setParent(LAUNCH_FRAME)
+        LAUNCH_FRAME.show()
+        LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
+        LAUNCH_FRAME.unsetCursor()
         waiting_circ.start()
         asyncio.create_task(update())
         APP.exec_()
