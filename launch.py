@@ -31,6 +31,7 @@ async def update():
     await asyncio.sleep(3)
     proc = await asyncio.create_subprocess_exec("update")
     await proc.communicate()
+    print("Finished running update script.")
     APP.exit()
 
 def main():

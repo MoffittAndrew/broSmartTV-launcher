@@ -6,3 +6,4 @@ export QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json
 
 cd "${dir}" && \
 python launcher/launch.py
+echo "Exiting launch script..."
