@@ -15,7 +15,6 @@ APP = QApplication([])
 MAIN_WINDOW = QWidget()
 MAIN_WINDOW.setWindowTitle("Launching...")
 MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
-MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
 
 async def update():
     
@@ -27,6 +26,7 @@ def main():
     with qtinter.using_asyncio_from_qt():
         circ_bar = QtWaitingSpinner(MAIN_WINDOW)
         MAIN_WINDOW.show()
+        MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
         circ_bar.start()
         asyncio.create_task(update())
         APP.exec_()
