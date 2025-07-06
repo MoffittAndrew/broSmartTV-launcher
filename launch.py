@@ -200,10 +200,9 @@ async def update():
 
 def main():
     with qtinter.using_asyncio_from_qt():
-        w = QtWaitingSpinner(MAIN_WINDOW)
-        w.start()
-
+        circ_bar = QtWaitingSpinner(MAIN_WINDOW)
         MAIN_WINDOW.show()
+        circ_bar.start()
         asyncio.create_task(update())
         APP.exec_()
 
