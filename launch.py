@@ -24,6 +24,8 @@ LAUNCH_FRAME.setPalette(p)
 
 # Hide mouse pointer
 LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
+LAUNCH_FRAME.show()
+LAUNCH_FRAME.hide()
 
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
