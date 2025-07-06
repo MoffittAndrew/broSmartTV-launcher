@@ -15,6 +15,8 @@ APP = QApplication([])
 MAIN_WINDOW = QWidget()
 MAIN_WINDOW.setWindowTitle("Launching...")
 MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
+MAIN_WINDOW.setAutoFillBackground(True)
+MAIN_WINDOW.setBackgroundRole(Qt.black)
 
 async def update():
     
