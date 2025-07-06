@@ -5,4 +5,4 @@ export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json
 
 cd "${dir}" && \
-python launch.py
+python launcher/launch.py
