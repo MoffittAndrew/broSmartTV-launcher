@@ -25,6 +25,10 @@ LAUNCH_FRAME.setPalette(p)
 LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
 LAUNCH_FRAME.unsetCursor()
 
+# Setup spinning circle
+waiting_circ = QtWaitingSpinner()
+waiting_circ.setParent(LAUNCH_FRAME)
+
 async def update():
     
     print("Running update script...")
@@ -36,8 +40,6 @@ async def update():
 
 def main():
     with qtinter.using_asyncio_from_qt():
-        waiting_circ = QtWaitingSpinner()
-        waiting_circ.setParent(LAUNCH_FRAME)
         LAUNCH_FRAME.show()
         LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
         LAUNCH_FRAME.unsetCursor()
