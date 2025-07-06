@@ -10,6 +10,9 @@ WIDTH = 1920
 HEIGHT = 1080
 APP = QApplication([])
 
+# Hide mouse pointer
+APP.setOverrideCursor(Qt.CursorShape.BlankCursor)
+
 # Initialize window
 LAUNCH_FRAME = QWidget()
 LAUNCH_FRAME.setWindowTitle("Launching...")
@@ -21,9 +24,6 @@ LAUNCH_FRAME.setAutoFillBackground(True)
 p = LAUNCH_FRAME.palette()
 p.setColor(LAUNCH_FRAME.backgroundRole(), Qt.black)
 LAUNCH_FRAME.setPalette(p)
-
-# Hide mouse pointer
-APP.setOverrideCursor(Qt.CursorShape.BlankCursor)
 
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
