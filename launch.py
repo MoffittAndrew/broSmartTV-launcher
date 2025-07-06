@@ -1,4 +1,4 @@
-import os
+import subprocess
 import asyncio
 import qtinter
 from math import ceil
@@ -201,7 +201,7 @@ async def update():
     
     print("Running update script...")
     await asyncio.sleep(3)
-    os.system("update")
+    subprocess.run("update")
     print("Finished running update script.")
 
 def main():
