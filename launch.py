@@ -36,11 +36,13 @@ def launch():
     sys.path.append("/bro/git/py")
     
     print("Launching main program...")
-    from main import MAIN_WINDOW
+    from main import MAIN_WINDOW, remote
     MAIN_WINDOW.show()
     
     LAUNCH_FRAME.hide()
     waiting_circ.stop()
+    
+    asyncio.create_task(remote.init())
 
 async def update():
     
