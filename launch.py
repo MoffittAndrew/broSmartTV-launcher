@@ -22,8 +22,8 @@ p.setColor(LAUNCH_FRAME.backgroundRole(), Qt.black)
 LAUNCH_FRAME.setPalette(p)
 
 # Hide mouse pointer
-#LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
-#LAUNCH_FRAME.unsetCursor()
+LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
+LAUNCH_FRAME.unsetCursor()
 
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
@@ -37,6 +37,10 @@ def launch():
     
     print("Launching main program...")
     from main import MAIN_WINDOW
+    MAIN_WINDOW.show()
+    
+    LAUNCH_FRAME.hide()
+    waiting_circ.stop()
 
 async def update():
     
