@@ -36,6 +36,8 @@ def main():
         waiting_circ = QtWaitingSpinner()
         waiting_circ.setParent(MAIN_WINDOW)
         MAIN_WINDOW.show()
+        MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
+        MAIN_WINDOW.unsetCursor()
         waiting_circ.start()
         asyncio.create_task(update())
         APP.exec_()
