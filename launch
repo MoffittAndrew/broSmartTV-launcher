@@ -1,9 +1,8 @@
 #!/bin/bash
 
 dir="/bro"
+export QT_QPA_PLATFORM=eglfs
+export QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json
 
-update && \
 cd "${dir}" && \
-QT_QPA_PLATFORM=eglfs \
-QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json \
-python git/py/main.py
+python launch.py
