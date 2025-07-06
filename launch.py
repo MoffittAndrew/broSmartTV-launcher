@@ -26,3 +26,5 @@ def main():
         MAIN_WINDOW.show()
         asyncio.create_task(update())
         APP.exec_()
+
+main()
