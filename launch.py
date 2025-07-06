@@ -29,7 +29,9 @@ async def update():
     
     print("Running update script...")
     await asyncio.sleep(3)
-    await asyncio.create_subprocess_exec("update")
+    proc = await asyncio.create_subprocess_exec("update")
+    await proc.communicate()
+    APP.exit()
 
 def main():
     with qtinter.using_asyncio_from_qt():
