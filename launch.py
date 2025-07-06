@@ -37,10 +37,10 @@ def launch():
     
     print("Launching main program...")
     from main import MAIN_WINDOW, remote
-    MAIN_WINDOW.show()
     
     #waiting_circ.stop()
     LAUNCH_FRAME.hide()
+    MAIN_WINDOW.show()
     
     asyncio.create_task(remote.init())
 
