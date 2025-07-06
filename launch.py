@@ -1,3 +1,7 @@
+import sys
+sys.path.append("/bro/git/py")
+from main import MAIN_WINDOW
+
 import asyncio
 import qtinter
 
@@ -28,6 +32,7 @@ LAUNCH_FRAME.unsetCursor()
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
 waiting_circ.setParent(LAUNCH_FRAME)
+waiting_circ.start()
 
 async def update():
     
@@ -36,18 +41,14 @@ async def update():
     proc = await asyncio.create_subprocess_exec("update")
     await proc.communicate()
     print("Finished running update script.")
-    APP.exit()
+    #MAIN_WINDOW.setParent(LAUNCH_FRAME)
 
 def main():
     with qtinter.using_asyncio_from_qt():
         print("Starting launch screen...")
         LAUNCH_FRAME.show()
-        LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
-        LAUNCH_FRAME.unsetCursor()
-        waiting_circ.start()
         asyncio.create_task(update())
         APP.exec_()
 
-print("Starting launch.py...")
 main()
 print("Exiting launch.py...")
