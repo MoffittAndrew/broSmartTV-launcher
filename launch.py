@@ -14,6 +14,7 @@ APP = QApplication([])
 LAUNCH_FRAME = QWidget()
 LAUNCH_FRAME.setWindowTitle("Launching...")
 LAUNCH_FRAME.setFixedSize(QSize(WIDTH, HEIGHT))
+LAUNCH_FRAME.setContentsMargins(0, 0, 0, 0)
 
 # Set background color
 LAUNCH_FRAME.setAutoFillBackground(True)
@@ -25,9 +26,6 @@ LAUNCH_FRAME.setPalette(p)
 waiting_circ = QtWaitingSpinner()
 waiting_circ.setParent(LAUNCH_FRAME)
 waiting_circ.start()
-
-# Hide mouse pointer
-waiting_circ.setCursor(Qt.CursorShape.BlankCursor)
 
 def launch():
     
