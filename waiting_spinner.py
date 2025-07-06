@@ -13,7 +13,7 @@ class QtWaitingSpinner(QWidget):
     mRevolutionsPerSecond = 1.57079632679489661923
     mNumberOfLines = 40
     mLineLength = 20
-    mLineWidth = 10
+    mLineWidth = 5
     mInnerRadius = 100
     mCurrentCounter = 0
     mIsSpinning = False
