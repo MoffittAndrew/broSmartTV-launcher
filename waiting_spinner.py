@@ -47,8 +47,8 @@ class QtWaitingSpinner(QWidget):
 
     def updatePosition(self):
         if self.parentWidget() and self.mCenterOnParent:
-            self.move(self.parentWidget().width() / 2 - self.width() / 2,
-                      self.parentWidget().height() / 2 - self.height() / 2)
+            self.move(ceil(self.parentWidget().width() / 2 - self.width() / 2),
+                      ceil(self.parentWidget().height() / 2 - self.height() / 2))
 
     def lineCountDistanceFromPrimary(self, current, primary, totalNrOfLines):
         distance = primary - current
