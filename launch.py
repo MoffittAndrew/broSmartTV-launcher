@@ -15,7 +15,7 @@ MAIN_WINDOW = QWidget()
 MAIN_WINDOW.setWindowTitle("Launching...")
 MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
 
-async def update(this):
+async def update():
     
     print("Updating software...")
     os.system("update")
