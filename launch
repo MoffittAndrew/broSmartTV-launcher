@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dir="/bro"
+
+update && \
+cd "${dir}" && \
+QT_QPA_PLATFORM=eglfs \
+QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json \
+python git/py/main.py

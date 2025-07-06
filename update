@@ -1,0 +1,11 @@
+#!/bin/bash
+
+dir="/bro"
+
+cd "${dir}"
+git_branch="$(cat branch)" && \
+cd "${dir}/git" && \
+git stash && \
+git switch "${git_branch}" && \
+git fetch && \
+git pull
