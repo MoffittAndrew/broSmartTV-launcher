@@ -18,7 +18,8 @@ MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
 async def update():
     
     print("Updating software...")
-    await os.system("update")
+    asyncio.sleep(10)
+    os.system("update")
     print("Done!")
 
 def main():
