@@ -1,7 +1,9 @@
 import os
 import asyncio
 import qtinter
+from math import ceil
 
+# PyQt imports
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -48,7 +50,7 @@ class QtWaitingSpinner(QWidget):
         self.setFixedSize(size, size)
 
     def updateTimer(self):
-        self.timer.setInterval(1000 / (self.mNumberOfLines * self.mRevolutionsPerSecond))
+        self.timer.setInterval(ceil(1000 / (self.mNumberOfLines * self.mRevolutionsPerSecond)))
 
     def updatePosition(self):
         if self.parentWidget() and self.mCenterOnParent:
