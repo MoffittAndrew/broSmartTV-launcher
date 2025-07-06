@@ -24,8 +24,6 @@ LAUNCH_FRAME.setPalette(p)
 
 # Hide mouse pointer
 LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
-LAUNCH_FRAME.show()
-LAUNCH_FRAME.hide()
 
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
@@ -57,7 +55,8 @@ async def update():
 def main():
     with qtinter.using_asyncio_from_qt():
         print("Starting launch screen...")
-        LAUNCH_FRAME.show()
+        #LAUNCH_FRAME.show()
+        
         asyncio.create_task(update())
         APP.exec_()
 
