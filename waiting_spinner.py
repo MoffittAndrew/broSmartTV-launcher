@@ -77,6 +77,7 @@ class QtWaitingSpinner(QWidget):
     def paintEvent(self, event):
         self.updatePosition()
         painter = QPainter(self)
+        painter.begin()
         painter.fillRect(self.rect(), Qt.transparent)
         painter.setRenderHint(QPainter.Antialiasing, True)
         if self.mCurrentCounter > self.mNumberOfLines:
@@ -98,6 +99,8 @@ class QtWaitingSpinner(QWidget):
             painter.drawRoundedRect(QRect(0, -self.mLineWidth // 2, self.mLineLength, self.mLineLength),
                                     self.mRoundness, Qt.RelativeSize)
             painter.restore()
+        
+        painter.end()
 
     def start(self):
         self.updatePosition()
