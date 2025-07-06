@@ -16,6 +16,7 @@ APP = QApplication([])
 MAIN_WINDOW = QWidget()
 MAIN_WINDOW.setWindowTitle("Launching...")
 MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
+MAIN_WINDOW.setCursor(Qt.BlankCursor)
 
 class QtWaitingSpinner(QWidget):
     mColor = QColor(Qt.gray)
@@ -201,7 +202,6 @@ async def update():
     print("Running update script...")
     await asyncio.sleep(3)
     await asyncio.create_subprocess_exec("update")
-    print("Finished running update script.")
 
 def main():
     with qtinter.using_asyncio_from_qt():
