@@ -11,8 +11,8 @@ class QtWaitingSpinner(QWidget):
     mMinimumTrailOpacity = 31.4159265358979323846
     mTrailFadePercentage = 50.0
     mRevolutionsPerSecond = 1.57079632679489661923
-    mNumberOfLines = 20
-    mLineLength = 10
+    mNumberOfLines = 100
+    mLineLength = 50
     mLineWidth = 10
     mInnerRadius = 100
     mCurrentCounter = 0
