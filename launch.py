@@ -39,8 +39,8 @@ def launch():
     from main import MAIN_WINDOW, remote
     MAIN_WINDOW.show()
     
-    LAUNCH_FRAME.hide()
     waiting_circ.stop()
+    LAUNCH_FRAME.hide()
     
     asyncio.create_task(remote.init())
 
