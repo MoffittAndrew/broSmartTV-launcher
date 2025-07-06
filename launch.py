@@ -17,10 +17,10 @@ MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
 
 async def update():
     
-    print("Updating software...")
-    await asyncio.sleep(5)
+    print("Running update script...")
+    await asyncio.sleep(3)
     os.system("update")
-    print("Done!")
+    print("Finished running update script.")
 
 def main():
     with qtinter.using_asyncio_from_qt():

@@ -5,8 +5,8 @@ dir="/bro"
 cd "${dir}"
 { # try
     echo "Checking for software updates..."
-    
-    ping "github.com" >/dev/null && \
+
+    ping "github.com" -c 5 -w 10 >/dev/null && \
     git_branch="$(cat branch)" && \
     cd "${dir}/git" && \
     git stash && \
