@@ -4,7 +4,7 @@ import qtinter
 # PyQt imports
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtCore import Qt, QSize
-#from waiting_spinner import QtWaitingSpinner
+from waiting_spinner import QtWaitingSpinner
 
 WIDTH = 1920
 HEIGHT = 1080
@@ -26,9 +26,9 @@ LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
 LAUNCH_FRAME.unsetCursor()
 
 # Setup spinning circle
-#waiting_circ = QtWaitingSpinner()
-#waiting_circ.setParent(LAUNCH_FRAME)
-#waiting_circ.start()
+waiting_circ = QtWaitingSpinner()
+waiting_circ.setParent(LAUNCH_FRAME)
+waiting_circ.start()
 
 def launch():
     
@@ -39,7 +39,7 @@ def launch():
     from main import MAIN_WINDOW, remote
     MAIN_WINDOW.show()
     
-    #waiting_circ.stop()
+    waiting_circ.stop()
     LAUNCH_FRAME.hide()
     
     asyncio.create_task(remote.init())
