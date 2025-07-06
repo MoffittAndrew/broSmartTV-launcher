@@ -26,9 +26,9 @@ LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
 LAUNCH_FRAME.unsetCursor()
 
 # Setup spinning circle
-waiting_circ = QtWaitingSpinner()
-waiting_circ.setParent(LAUNCH_FRAME)
-waiting_circ.start()
+#waiting_circ = QtWaitingSpinner()
+#waiting_circ.setParent(LAUNCH_FRAME)
+#waiting_circ.start()
 
 def launch():
     
@@ -40,7 +40,7 @@ def launch():
     MAIN_WINDOW.show()
     
     LAUNCH_FRAME.hide()
-    waiting_circ.stop()
+    #waiting_circ.stop()
     
     asyncio.create_task(remote.init())
 
