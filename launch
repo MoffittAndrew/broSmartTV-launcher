@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Starting launch script..."
+
 dir="/bro"
 export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json

@@ -17,3 +17,5 @@ cd "${dir}"
 } || {
     echo "Error when checking for updates, please check internet connection."
 }
+
+echo "Exiting update script..."

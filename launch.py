@@ -40,6 +40,7 @@ async def update():
 
 def main():
     with qtinter.using_asyncio_from_qt():
+        print("Starting launch screen...")
         LAUNCH_FRAME.show()
         LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
         LAUNCH_FRAME.unsetCursor()
@@ -47,4 +48,6 @@ def main():
         asyncio.create_task(update())
         APP.exec_()
 
+print("Starting launch.py...")
 main()
+print("Exiting launch.py...")
