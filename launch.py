@@ -1,7 +1,3 @@
-import sys
-sys.path.append("/bro/git/py")
-from main import MAIN_WINDOW
-
 import asyncio
 import qtinter
 
@@ -34,6 +30,12 @@ waiting_circ = QtWaitingSpinner()
 waiting_circ.setParent(LAUNCH_FRAME)
 waiting_circ.start()
 
+def launch():
+    
+    import sys
+    sys.path.append("/bro/git/py")
+    from main import MAIN_WINDOW
+
 async def update():
     
     print("Running update script...")
@@ -41,7 +43,7 @@ async def update():
     proc = await asyncio.create_subprocess_exec("update")
     await proc.communicate()
     print("Finished running update script.")
-    #MAIN_WINDOW.setParent(LAUNCH_FRAME)
+    launch()
 
 def main():
     with qtinter.using_asyncio_from_qt():
