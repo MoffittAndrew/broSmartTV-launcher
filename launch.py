@@ -8,6 +8,12 @@ from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
+APP = QApplication([])
+
+MAIN_WINDOW = QWidget()
+MAIN_WINDOW.setWindowTitle("Launching...")
+MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
+
 class DISPLAY:
     WIDTH = 1920
     HEIGHT = 1080
@@ -205,11 +211,5 @@ def main():
         circ_bar.start()
         asyncio.create_task(update())
         APP.exec_()
-
-APP = QApplication([])
-
-MAIN_WINDOW = QWidget()
-MAIN_WINDOW.setWindowTitle("Launching...")
-MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
 
 main()
