@@ -55,8 +55,8 @@ async def update():
 def main():
     with qtinter.using_asyncio_from_qt():
         print("Starting launch screen...")
-        #LAUNCH_FRAME.show()
-        
+        LAUNCH_FRAME.show()
+        LAUNCH_FRAME.hide()
         asyncio.create_task(update())
         APP.exec_()
 
