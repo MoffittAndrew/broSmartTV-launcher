@@ -22,8 +22,8 @@ p.setColor(LAUNCH_FRAME.backgroundRole(), Qt.black)
 LAUNCH_FRAME.setPalette(p)
 
 # Hide mouse pointer
-LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
-LAUNCH_FRAME.unsetCursor()
+#LAUNCH_FRAME.setCursor(Qt.CursorShape.BlankCursor)
+#LAUNCH_FRAME.unsetCursor()
 
 # Setup spinning circle
 waiting_circ = QtWaitingSpinner()
@@ -34,6 +34,8 @@ def launch():
     
     import sys
     sys.path.append("/bro/git/py")
+    
+    print("Launching main program...")
     from main import MAIN_WINDOW
 
 async def update():
