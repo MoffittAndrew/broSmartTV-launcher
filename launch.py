@@ -6,19 +6,24 @@ from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtCore import Qt, QSize
 from waiting_spinner import QtWaitingSpinner
 
-class DISPLAY:
-    WIDTH = 1920
-    HEIGHT = 1080
-
+WIDTH = 1920
+HEIGHT = 1080
 APP = QApplication([])
 
+# Initialize window
 MAIN_WINDOW = QWidget()
 MAIN_WINDOW.setWindowTitle("Launching...")
-MAIN_WINDOW.setFixedSize(QSize(DISPLAY.WIDTH, DISPLAY.HEIGHT))
+MAIN_WINDOW.setFixedSize(QSize(WIDTH, HEIGHT))
+
+# Set background color
 MAIN_WINDOW.setAutoFillBackground(True)
 p = MAIN_WINDOW.palette()
 p.setColor(MAIN_WINDOW.backgroundRole(), Qt.black)
 MAIN_WINDOW.setPalette(p)
+
+# Hide mouse pointer
+MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
+MAIN_WINDOW.unsetCursor()
 
 async def update():
     
@@ -31,7 +36,6 @@ def main():
         waiting_circ = QtWaitingSpinner()
         waiting_circ.setParent(MAIN_WINDOW)
         MAIN_WINDOW.show()
-        MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
         waiting_circ.start()
         asyncio.create_task(update())
         APP.exec_()
