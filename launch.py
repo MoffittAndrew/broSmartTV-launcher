@@ -28,10 +28,11 @@ async def update():
 
 def main():
     with qtinter.using_asyncio_from_qt():
-        circ_bar = QtWaitingSpinner(MAIN_WINDOW)
+        waiting_circ = QtWaitingSpinner()
+        waiting_circ.setParent(MAIN_WINDOW)
         MAIN_WINDOW.show()
         MAIN_WINDOW.setCursor(Qt.CursorShape.BlankCursor)
-        circ_bar.start()
+        waiting_circ.start()
         asyncio.create_task(update())
         APP.exec_()
 
