@@ -4,9 +4,9 @@ echo "Starting launch script..."
 
 dir="/bro"
 export QT_QPA_PLATFORM=eglfs
-export QT_QPA_EGLFS_KMS_CONFIG=eglfs_kms_conf.json
+export QT_QPA_EGLFS_KMS_CONFIG=launcher/eglfs_kms_conf.json
 
 cd "${dir}" && \
 echo "Starting launch.py..."
-python launcher/launch.py
+python git/py/launch.py
 echo "Exiting launch script..."
