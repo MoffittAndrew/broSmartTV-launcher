@@ -7,5 +7,7 @@ export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_KMS_CONFIG=launcher/eglfs_kms_conf.json
 
 cd "${dir}" && \
-python git/py/launch.py
-echo "Exiting launch script..."
+while true; do
+    python git/py/launch.py
+    sleep 5
+done
