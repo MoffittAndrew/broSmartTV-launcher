@@ -9,7 +9,7 @@ export QT_QPA_EGLFS_KMS_CONFIG=launcher/eglfs_kms_conf.json
 cd "${dir}" && \
 while true; do
     python git/py/launch.py
-    if [ $? -eq 0 ]; do
+    if [ $? -eq 0 ]; then
         sleep 5
         echo "Restarting script..."
     else
