@@ -9,11 +9,11 @@ export QT_QPA_EGLFS_KMS_CONFIG=launcher/eglfs_kms_conf.json
 cd "${dir}" && \
 while true; do
     python git/py/launch.py
-    if [ $? -eq 0 ]; then
+    if [ $? -eq 130 ]; then
+        echo "Launch script has been manually shut down, not restarting."
+        exit 1
+    else
         sleep 5
         echo "Restarting script..."
-    else
-        echo "There was a problem running the launch script, not restarting."
-        exit 1
     fi
 done
