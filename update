@@ -13,6 +13,8 @@ cd "${dir}"
     git switch "${git_branch}" && \
     git fetch && \
     git pull && \
+    echo "Software updated, restarting lircd..." && \
+    sudo systemctl restart lircd && \
     echo "Done!"
 } || {
     echo "Error when checking for updates, please check internet connection."
