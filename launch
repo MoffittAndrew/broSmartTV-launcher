@@ -13,7 +13,7 @@ while true; do
         echo "Launch script has been manually shut down, not restarting."
         exit 1
     else
-        sleep 5
         echo "Restarting script..."
+        sleep 5
     fi
 done
