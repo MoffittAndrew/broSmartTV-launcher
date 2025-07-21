@@ -1,23 +1,32 @@
 #!/bin/bash
 
 dir="/bro"
+logprefix="[update]"
 
+echo "$logprefix Starting update script..."
 cd "${dir}"
 { # try
-    echo "Checking for software updates..."
 
+    echo "$logprefix Checking connection to github.com..." && \
     ping "github.com" -c 5 -w 10 >/dev/null && \
     git_branch="$(cat branch)" && \
     cd "${dir}/git" && \
+    echo "$logprefix Stashing any changes made..." && \
     git stash && \
+    echo "$logprefix Switching git branch..." && \
     git switch "${git_branch}" && \
+    echo "$logprefix Checking for software updates..." && \
     git fetch && \
     git pull && \
-    echo "Software updated, restarting lircd..." && \
+    echo "$logprefix Software updated, restarting services..." && \
+    echo "$logprefix Restarting lircd..." && \
     sudo systemctl restart lircd && \
-    echo "Done!"
+    echo "$logprefix Restarting apache..." && \
+    sudo systemctl restart apache2 && \
+    echo "$logprefix Done!"
+
 } || {
-    echo "Error when checking for updates, please check internet connection."
+    echo "$logprefix Error when checking for updates, please check internet connection."
 }
 
-echo "Exiting update script..."
+echo "$logprefix Exiting update script..."
