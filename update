@@ -21,8 +21,6 @@ cd "${dir}"
     echo "$logprefix Software updated, restarting services..." && \
     echo "$logprefix Restarting lircd..." && \
     sudo systemctl restart lircd && \
-    echo "$logprefix Restarting apache..." && \
-    sudo systemctl restart apache2 && \
     echo "$logprefix Done!"
 
 } || {
